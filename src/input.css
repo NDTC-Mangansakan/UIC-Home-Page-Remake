@@ -1,0 +1,224 @@
+@import "tailwindcss";
+
+/*customized tailwind css*/
+
+@theme {
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --breakpoint-2xl: 1400px;
+}
+
+.custom-container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media(width >=425px) {
+        max-width: 425px;
+    }
+
+    @media (width >=576px) {
+        max-width: 540px;
+    }
+
+    @media (width >=768px) {
+        max-width: 720px;
+    }
+
+    @media (width >=992px) {
+        max-width: 960px;
+    }
+
+    @media (width >=1200px) {
+        max-width: 1140px;
+    }
+
+    @media (width >=1400px) {
+        max-width: 1320px;
+    }
+}
+
+@utility text-primary {
+    @apply text-red-400;
+}
+
+@utility bg-primary{
+    @apply bg-red-400;
+}
+
+/*navigation*/
+
+/*small to lg screens*/
+
+main {
+    transition: .3s ease;
+}
+
+#sidebar {
+    transition: .3s ease;
+}
+
+.move-main {
+    right: 35vh;
+}
+
+#sidebar {
+    right: -35vh
+}
+
+.move-sidebar {
+    right: 0;
+}
+
+.sidebar-link {
+    @apply capitalize text-gray-400 font-bold pb-2 border-b-1 flex justify-between items-center transition duration-300 hover:text-gray-300;
+}
+
+/*xl screens*/
+
+.nav-link-1{
+    @apply  font-bold text-white;
+}
+
+.nav-link-2{
+    @apply font-bold text-red-300 pb-5 transition duration-300 hover:text-black;
+}
+
+/*home swiper*/
+
+.swiper-slide {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.swiper-slide-1 {
+    background-image: url('img/home-img1.jpg');
+}
+
+.swiper-slide-2 {
+    background-image: url('img/home-img2.jpg');
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    background-color: rgba(0, 0, 0, 0.541);
+    color: #fff;
+    padding: 2rem;
+    border-radius: 50%;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    color: white;
+}
+
+.position-home-content{
+    @apply pt-25 pl-5 md:pt-45 md:pl-15 lg:pt-35 lg:pl-25 xl:pt-45;
+}
+
+.top-home-title{
+    @apply text-xs text-white font-bold md:text-2xl lg:text-3xl xl:text-4xl;
+}
+
+.main-home-title{
+    @apply text-4xl text-white font-bold p-2 mt-3 bg-primary inline-block md:text-6xl lg:text-7xl xl:text-8xl;
+}
+
+.home-btn{
+    @apply bg-white mt-3 px-5 py-3 rounded-3xl capitalize block cursor-pointer md:px-8 md:py-5  ;
+}
+
+.bottom-home-title{
+    @apply font-bold text-white border-l-8 border-white mt-10 pl-5 md:text-2xl lg:text-3xl xl:text-4xl;
+}
+
+.swiper-bg{
+    @apply absolute top-0 right-0 left-0 bottom-0 -z-1;
+    background: linear-gradient(to right, oklch(80.8% 0.114 19.571), transparent);
+}
+
+/*Institution*/
+
+.logos-card{
+    position:relative;
+}
+
+.logos-card img{
+
+    @media(width>=992px){
+        width: 100%;
+        height: 100%;
+    }
+}
+
+#institution-link{
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.5);
+    transition: .3s;
+}
+
+.institution-link-style{
+    @apply absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center text-white text-3xl;
+}
+
+.logos-card:hover #institution-link{
+    opacity: 1;
+}
+
+.institution-btn{
+    @apply bg-primary text-white font-bold px-5 py-3 mt-10 cursor-pointer transition duration-300 hover:bg-gray-800;
+}
+
+/*News*/
+
+.news-container{
+    @apply grid grid-cols-1 mt-15 gap-y-5 lg:grid-cols-2 lg:gap-x-10 lg:gap-y-10;
+}
+
+.news-link-container{
+    @apply flex justify-between;
+}
+
+.news-link-img{
+    @apply w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-120;
+}
+
+.news-content{
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+/*community*/
+
+.community-grid-container{
+    @apply py-15 grid grid-cols-1 gap-y-10 md:px-10 lg:grid-cols-3 lg:gap-x-10 lg:gap-y-0;
+}
+
+.community-logo{
+    @apply bg-primary w-20 h-15;
+}
+
+.community-title{
+    @apply text-white font-bold text-2xl;
+}
+
+.community-text{
+    @apply text-white  font-semibold mt-5;
+}
+
+.community-link{
+    @apply text-white font-semibold cursor-pointer mt-5 inline-block;
+}
+
+/*Grade Level*/
+
+.black-text{
+    color:black;
+    background-color: white;
+}
